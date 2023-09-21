@@ -26,7 +26,7 @@ public class ValidAdvice {
     public void putMapping() {
     }
 
-    @Before("postMapping() || putMapping()")
+    @Before("postMapping() || putMapping()") // postMapping() || putMapping()에 있는 어노테이션 직전에 발동해
     public void validationAdvice(JoinPoint jp) throws Throwable {
         Object[] args = jp.getArgs();
         for (Object arg : args) {

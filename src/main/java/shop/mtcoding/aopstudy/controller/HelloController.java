@@ -1,6 +1,7 @@
 package shop.mtcoding.aopstudy.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import shop.mtcoding.aopstudy.config.annotation.Hello;
 
@@ -15,7 +16,7 @@ public class HelloController {
     // http://localhost:8080/hello/v2?username=ssar
     @Hello
     @GetMapping("/hello/v2")
-    public String v2(String username){
+    public String v2(@RequestParam(defaultValue = "ssar") String username){
         System.out.println("username : 값 변경? : "+username);
         return "v2";
     }
